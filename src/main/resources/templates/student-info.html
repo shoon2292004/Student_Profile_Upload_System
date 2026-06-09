@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/css :: css}"></head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body class="bg-light">
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <!-- Card -->
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <!-- Image -->
+                <img class="card-img-top rounded-top-4"
+                     th:src="@{/img/upload/{file}(file=${stuObj.photo})}"
+                     th:alt="${stuObj.name}"
+                     style=" height: 280px; object-fit: cover; display: block;">
+
+                <!-- Body -->
+                <div class="card-body text-center">
+
+                    <h4 class="card-title mb-3" th:text="${stuObj.name}">Name</h4>
+
+                    <ul class="list-group list-group-flush text-start">
+
+                        <li class="list-group-item">
+                            <strong>Age:</strong>
+                            <span th:text="${stuObj.age}"></span>
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Gender:</strong>
+                            <span th:text="${stuObj.gender}"></span>
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Email:</strong>
+                            <span th:text="${stuObj.email}"></span>
+                            <p>hello</p>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+            <!-- End Card -->
+
+        </div>
+    </div>
+
+</div>
+<div th:replace="~{fragments/js :: js}"></div>
+</body>
+</html>
